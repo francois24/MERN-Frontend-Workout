@@ -6,11 +6,12 @@ import WorkoutDetail from '../components/WorkoutDetail'
 import WorkoutForm from "../components/WorkoutsForm"
 
 const Home = () => {
+    const url ='https://mern-backend-workout.adaptable.app/'
     const {workouts,dispatch} = useWorkoutsContext()
 
     useEffect(() => {
         const fetchWorkouts = async () => {
-            const response = await fetch('/api/workouts')
+            const response = await fetch(url + '/api/workouts')
             const json = await response.json()
 
             if (response.ok){

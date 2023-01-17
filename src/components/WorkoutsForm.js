@@ -3,7 +3,6 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 
 
 const WorkoutForm = () =>{
-    const url ='https://mern-backend-workout.adaptable.app/'
     const {dispatch} = useWorkoutsContext()
 
     const [title, setTitle] = useState('')
@@ -16,7 +15,7 @@ const WorkoutForm = () =>{
 
         const workout = {title , load, reps}
 
-        const response = await fetch(url + '/api/workouts',{
+        const response = await fetch('/api/workouts',{
             method:'POST',
             body: JSON.stringify(workout),
             headers:{

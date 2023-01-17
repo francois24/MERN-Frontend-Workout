@@ -4,11 +4,10 @@ import { useWorkoutsContext } from "../hooks/useWorkoutsContext"
 import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const WorkoutDetails = ({ workout }) => {
-  const url ='https://mern-backend-workout.adaptable.app/'
     const { dispatch } = useWorkoutsContext()
   
     const handleClick = async () => {
-      const response = await fetch(url + '/api/workouts/' + workout._id, {
+      const response = await fetch('/api/workouts/' + workout._id, {
         method: 'DELETE'
       })
       const json = await response.json()
